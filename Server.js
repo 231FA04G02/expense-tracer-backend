@@ -8,7 +8,7 @@ const transactionRoutes = require('./routes/transactions.routes');
 
 
 dotenv.config();
-const requiredEnvVars = ['MONGO_URI', 'JWT_SECRET', 'PORT'];
+const requiredEnvVars = ['MONGO_URI', 'JWT_SECRET'];
 const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
 
 if (missingVars.length > 0) {
