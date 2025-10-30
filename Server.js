@@ -75,6 +75,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-  console.log(` Server is running on port ${PORT}`);
-});
+module.exports = app;
+// app.listen(PORT, () => {
+//   console.log(` Server is running on port ${PORT}`);
+// });
