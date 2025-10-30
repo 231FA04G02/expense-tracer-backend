@@ -8,7 +8,7 @@ const transactionRoutes = require('./routes/transactions.routes');
 
 
 dotenv.config();
-const requiredEnvVars = ['MONGO_URI', 'JWT_SECRET', 'PORT'];
+const requiredEnvVars = ['MONGO_URI', 'JWT_SECRET'];
 const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
 
 if (missingVars.length > 0) {
@@ -75,7 +75,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
 
 const PORT = process.env.PORT || 5001;
-module.exports = app;
-// app.listen(PORT, () => {
-//   console.log(` Server is running on port ${PORT}`);
-// });
+// module.exports = app;
+app.listen(PORT, () => {
+  console.log(` Server is running on port ${PORT}`);
+});
